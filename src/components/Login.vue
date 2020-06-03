@@ -11,7 +11,9 @@
 
 <script>
     import firebase from "firebase";
-    import {users} from "../firebase"
+    import {usersRef} from "../firebase"
+
+
     export default {
         data() {
             return{
@@ -28,10 +30,12 @@
                 .auth()
                 .signInWithEmailAndPassword(this.form.email, this.form.password)
                 .then(data => {
-                    
+                   this.$store.dispatch("fetchUser",{email:this.form.email});
                     this.$router.replace({ name: "Dashboard" });
                 })
                 .catch(err => {
+                    console.log(this.$store.getters.status);
+                   
                 this.error = err.message;
                 });
             }

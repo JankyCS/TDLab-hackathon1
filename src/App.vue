@@ -1,20 +1,35 @@
 <template>
   <div id="app">
+    <Navbar></Navbar>
     <router-view></router-view>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <!-- <ul>
+      pok
+        <li v-for="user in users" v-bind:key="user['.key']">{{user}}</li>
+        </ul> -->
+    <!-- <button type="button" class="btn btn-primary">Primary</button> -->
   </div>
 </template>
 
 <script>
 
-import router from './routes/index'
-
+// import router from './routes/index'
+// import {usersRef} from './firebase'
+import VueFire from 'vuefire'
+import Navbar from './components/Navbar'
+//////////
 export default {
   name: 'app',
+  // firebase:{
+  //   users:usersRef
+  // },
   data () {
     return {
+    
       msg: 'Welcome to Your Vue.js App'
-    }
+    };
+  },
+  components: {
+    Navbar
   }
 }
 </script>
@@ -26,7 +41,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 
 h1, h2 {

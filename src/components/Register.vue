@@ -13,7 +13,7 @@
 
 <script>
 import firebase from "firebase";
-import {users} from "../firebase"
+import {usersRef} from "../firebase";
 
 export default {
   data() {
@@ -39,7 +39,25 @@ export default {
             })
             .then(() => {
                 
-                users.push({name:this.form.name,email:this.form.email,password:this.form.password,value1:0})
+                usersRef.push({name:this.form.name,
+                              email:this.form.email,
+                              password:this.form.password,
+                              value1:0,
+                              mortgage:{
+                                  balance:0,
+                                  interestRate:0.1,
+                                  numDefers:0,
+                                  frequency:4
+                              },
+                              cCard:{
+                                balance:0,
+                                minPay:1,
+                                interestRate:0.1,
+                                numDefers:0,
+                              }
+                              
+                              
+                          })
 
                 this.success = "Successfully Registered";
                 this.error = null;
@@ -48,6 +66,8 @@ export default {
             
         })
         .catch(err => {
+
+            //this.error = users;
           this.error = err.message;
         });
     }
