@@ -24,6 +24,12 @@ const router = new Router({
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
+    },
+    {
+        path: '/',
+        name:'Home',
+        component: Login
+
     }
 ]
 });

@@ -61,4 +61,17 @@ li {
 a {
   color: #42b983;
 }
+
+input{
+        margin:7px;
+    }
+.disclaimer{
+  font-style: italic;
+  color:#575757;
+  font-size: 0.5em;
+  padding-top:40px;
+  padding-left:30px;
+  text-align:left;
+
+}
 </style>

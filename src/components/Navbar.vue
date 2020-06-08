@@ -22,7 +22,7 @@
             <li class="nav-item" v-if="status.loggedIn">
              <a class="nav-link" href="/login" @click.prevent="signOut">Sign out</a>
             </li>
-           
+            
 
         </ul>
         </div>
@@ -48,10 +48,11 @@ export default {
                 .signOut()
                 .then(() => {
                 this.$router.replace({
-                    name: "/login"
+                    name: "login"
                 });
                 });
-    }
+    },
+       
     }
 }
 </script>
